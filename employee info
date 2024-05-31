@@ -1,0 +1,43 @@
+import java.util.*;
+
+class Employee
+{
+    String name;
+    int yearOfJoin;
+    String address;
+    Employee(String a,int b,String c)
+    {
+        name=a;
+        yearOfJoin=b;
+        address=c;
+    }
+    public void display()
+    {
+        System.out.println(name + "\t\t" + yearOfJoin + "\t\t" + address);
+    }
+
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+       Scanner k=new Scanner(System.in);
+        System.out.println("Enter number of employee:");
+        int n=k.nextInt();
+        Employee employee[]=new Employee[n];
+        
+        System.out.println("Enter employee details:");
+        for(int i=0;i<n;i++)
+        {
+            employee[i].name=k.nextLine();
+            employee[i].yearOfJoin=k.nextInt();
+            employee[i].address=k.nextLine();
+        }
+        for(int i=0;i<n;i++)
+        {
+            employee[i].display();
+        
+        
+    }
+}
+}
