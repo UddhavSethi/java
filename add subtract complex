@@ -1,0 +1,33 @@
+class Complex
+{
+    int real;
+    int imag;
+    Complex(int a,int b)
+    {
+        real=a;
+        imag=b;
+    }
+    void add(Complex o2)
+    {
+        int nreal=real+o2.real;
+        int nimag=imag+o2.imag;
+        System.out.println("sum of the two complex numbers :"+nreal+"+"+nimag+"i");
+    }
+      void minus(Complex o2)
+    {
+        int nreal=real-o2.real;
+        int nimag=imag-o2.imag;
+        System.out.println("difference of the two complex numbers :"+nreal+"-("+nimag+"i)");
+    }
+  
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Complex a=new Complex(12,3);
+        Complex b=new Complex(10,12);
+        a.add(b);
+        a.minus(b);
+    }
+}
