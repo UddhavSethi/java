@@ -1,0 +1,10 @@
+public class Main
+{
+    public static void(String[]args)
+    {
+        scanner k=new scanner(system.in);
+        int a=k.nextInt();
+        //you create a scanner class object k which is alocated memory using new 
+        //k is then used to accept input
+    }
+}
