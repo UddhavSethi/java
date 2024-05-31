@@ -1,0 +1,23 @@
+class Pen 
+{
+    String colour;
+    int cost;
+    Pen(String a,int b)
+    {
+        colour=a;
+        cost=b;
+    }
+    void display()
+    {
+        System.out.println(colour+" is the colour and cost is "+cost);
+        
+    }
+}
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Pen Trimax(red,20);
+        Trimax.display;
+    }
+}
