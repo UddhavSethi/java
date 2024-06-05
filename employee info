@@ -30,7 +30,7 @@ public class Main
         for(int i=0;i<n;i++)
         {
             employee[i].name=k.nextLine();
-            employee[i].yearOfJoin=k.nextInt();
+            employee[i].yearOfJoin=k.nextInt();        //use private or create a seperate function to initalise values or use constructor
             employee[i].address=k.nextLine();
         }
         for(int i=0;i<n;i++)
