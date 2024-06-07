@@ -1,0 +1,38 @@
+import java.util.*;
+class Student
+{
+    String name;
+    int roll_number;
+    int marks;
+    public Student(String a,int b,int c)
+    {
+        name=a;
+        roll_number=b;
+        marks=c;
+    }
+};
+public class Main 
+{
+    public static void main(String[] args)
+    {
+       Scanner k=new Scanner(System.in);
+       int n=k.nextInt();
+       Student students[]=new Student[n];
+       for(int i=0;i<n;i++)
+       {
+           System.out.println("enter name:");
+           String a=k.next();
+           System.out.println("enter roll_number:");
+           int b=k.nextInt();
+           System.out.println("enter marks:");
+           int c=k.nextInt();
+           students[i]=new Student(a,b,c);
+            
+       }
+         System.out.println("Students details:");
+        for (Student student : students) 
+        {
+            System.out.println("Name: " + student.name + ", Roll Number: " + student.roll_number + ", Marks: " + student.marks);
+        }
+    }
+}
