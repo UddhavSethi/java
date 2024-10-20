@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int max(int arr[],int n);
+void countsort(int arr[],int n,int m);
+int main()
+{
+    int n,m;
+    scanf("%d",&n);
+    scanf("%d",&m);
+    int *arr=(int*)malloc(n*sizeof(int));
+       for(int i=0;i<n;i++)
+    {
+        if(i!=n-1)
+        {
+        scanf("%d ,",&arr[i]);
+        }
+        else
+        {
+            scanf("%d",&arr[i]);
+        }
+    }
+    int m1=max(arr,n);
+    countsort(arr,n,m1);
+     for (int i = 0; i < n; i++) 
+     {
+          if(i!=n-1 && i!=0)
+        {
+        printf(" %d,", arr[i]);
+        }
+        else if(i==0)
+        {
+            printf("%d,",arr[i]);
+        }
+        else
+        {
+             printf(" %d\n", arr[i]);
+        }
+    }
+}
+int max(int arr[],int n)
+{
+    int max_val=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]>max_val)
+        {
+            max_val=arr[i];
+        }
+    }
+    return max_val;
+}
+void countsort(int arr[],int n,int max_value)
+{
+    int *countarray=(int*)malloc((max_value+1)*sizeof(int));
+    int *output=(int*)malloc(n*sizeof(int));
+    for(int i=0;i<=max_value;i++)
+    {
+        countarray[i]=0;
+    }
+    for(int i=0;i<n;i++)
+    {
+        countarray[arr[i]]++;
+    }
+    for(int i=0;i<=max_value;i++)
+    {
+        countarray[i]=countarray[i-1]+countarray[i];
+    }
+    for(int i=n-1;i>=0;i--)
+    {
+        output[countarray[arr[i]]-1]=arr[i];
+        countarray[arr[i]]--;
+    }
+    // Copy the sorted output array back to the original array
+    for (int i = 0; i < n; i++) 
+    {
+        arr[i] = output[i];
+    }
+    free(countarray);
+    free(output);
+    
+}
